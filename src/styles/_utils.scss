@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-pad;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

@@ -1,0 +1,19 @@
+@use 'reset';
+@use 'variables' as *;
+@use 'utils';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+body {
+  font-family: $font-sans;
+  font-size: $text-base;
+  font-weight: $weight-regular;
+  color: $color-text-primary;
+  background: $color-bg-page;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
