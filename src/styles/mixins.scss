@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+@mixin flex($align: center, $justify: flex-start, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  @if $gap != 0 { gap: $gap; }
+}
+
+@mixin grid($cols: 1, $gap: $space-4) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+@mixin text($size: $text-base, $weight: $weight-regular, $color: $color-text-primary) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin card {
+  background: $color-bg-card;
+  border: 0.5px solid $color-border;
+  border-radius: $radius-lg;
+}
+
+@mixin hover-lift {
+  transition: transform $transition-fast, border-color $transition-fast;
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $color-border-md;
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
