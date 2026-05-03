@@ -1,6 +1,6 @@
 import styles from './Header.module.scss'
 
-const NAV_ITEMS = ['Огляд', 'Інвестиції', 'Програми', 'Звіти']
+const NAV_ITEMS: string[]= ['Огляд', 'Інвестиції', 'Програми', 'Звіти']
 
 export default function Header() {
   return (
