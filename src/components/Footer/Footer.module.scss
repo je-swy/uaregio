@@ -1,0 +1,75 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  margin-top: auto;
+  border-top: 0.5px solid $color-border;
+  padding: $space-6 $container-pad;
+}
+
+.inner {
+  max-width: $container-max;
+  margin: 0 auto;
+  @include flex(center, space-between);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.logo {
+  @include flex(center, flex-start, 8px);
+}
+
+.logoMark {
+  width: 24px;
+  height: 24px;
+  background: $color-primary;
+  border-radius: $radius-sm;
+  @include flex(center, center);
+
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.logoText {
+  @include text($text-sm, $weight-medium);
+}
+
+.copy {
+  @include text($text-xs, $weight-regular, $color-text-muted);
+}
+
+.right {
+  @include flex(center, flex-start, $space-6);
+}
+
+.link {
+  @include text($text-xs, $weight-regular, $color-text-secondary);
+  cursor: pointer;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.sources {
+  @include text($text-xs, $weight-regular, $color-text-muted);
+  margin-top: $space-4;
+  padding-top: $space-4;
+  border-top: 0.5px solid $color-border;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-4;
+  }
+}

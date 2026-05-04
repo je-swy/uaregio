@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import RegionList from "./components/RegionList/RegionList";
 import DetailPanel from "./components/DetailPanel/DetailPanel";
+import Footer from './components/Footer/Footer'
 
 function App() {
   const [selected, setSelected] = useState<Region | null>(regions[0]);
@@ -19,6 +20,7 @@ function App() {
         onSelect={setSelected}
       />
       {selected && <DetailPanel region={selected} />}
+      <Footer />
     </div>
   );
 }
