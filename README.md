@@ -1,74 +1,64 @@
-# React + TypeScript + Vite
+# УкрРегіон 🇺🇦
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Прототип вебплатформи для перегляду економічного розвитку областей України.
+Проєкт створений як демонстраційний прототип у рамках навчального буткемпу.
 
-Currently, two official plugins are available:
+## Про проєкт
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+УкрРегіон — це однасторінковий застосунок, який візуалізує ключові економічні показники регіонів України: податкові надходження, прямі інвестиції, активні програми розвитку, а також міжнародні програми підтримки та міста-побратими.
 
-## React Compiler
+Концепція натхненна сайтами місцевих органів влади, але реалізована у сучасному, мінімалістичному стилі.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> Усі дані є ілюстративними і використовуються виключно для демонстрації інтерфейсу.
 
-## Expanding the ESLint configuration
+## Технології
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React 18](https://react.dev/) — функціональні компоненти
+- [TypeScript](https://www.typescriptlang.org/) — типізація даних та пропсів
+- [SCSS Modules](https://sass-lang.com/) — ізольовані стилі компонентів, міксини, змінні
+- [Vite](https://vitejs.dev/) — збірка та dev-сервер
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Функціонал
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Перегляд економічних показників по 5 областях
+- Інтерактивний вибір регіону з оновленням деталей
+- Блок міжнародних програм та міст-побратимів
+- Адаптивна верстка з бургер-меню на мобільних пристроях
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Структура компонентів
+
+``` bash
+src/
+├── components/
+│   ├── Header/        # Навігація, логотип, бургер-меню
+│   ├── Hero/          # Головний банер зі статистикою
+│   ├── RegionList/    # Сітка карточок з фільтрами
+│   ├── RegionCard/    # Картка одного регіону
+│   ├── DetailPanel/   # Детальна інформація по регіону
+│   └── Footer/        # Підвал з посиланнями та джерелами
+├── data/
+│   └── regions.ts     # Mock-дані областей
+├── types/
+│   └── index.ts       # TypeScript інтерфейси
+└── styles/
+├── _variables.scss
+├── _mixins.scss
+├── _reset.scss
+├── _utils.scss
+└── global.scss
+```
+## Запуск локально
+
+```bash
+git clone https://github.com/je-swy/uaregio.git
+cd ukrregion
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Відкрий [http://localhost:5173](http://localhost:5173) у браузері.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Деплой
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# uaregio
+Проєкт задеплоєний на [Vercel](https://vercel.com/).
+
