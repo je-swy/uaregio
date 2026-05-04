@@ -1,3 +1,11 @@
+export interface CityProgram {
+  title: string
+  donor: string
+  category: string
+  description: string
+  year: number
+}
+
 export interface RegionMetric {
   label: string
   value: string
@@ -14,4 +22,6 @@ export interface Region {
   color: string
   metrics: RegionMetric[]
   programs: string[]
+  cityPrograms: CityProgram[]
+  twinCities: string[]
 }

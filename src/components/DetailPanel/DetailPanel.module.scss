@@ -97,3 +97,64 @@
     margin: 0 $space-4 $space-8;
   }
 }
+
+.divider {
+  height: 0.5px;
+  background: $color-border;
+  margin: $space-6 0;
+}
+
+.twinCities {
+  @include flex(center, flex-start, $space-2);
+  flex-wrap: wrap;
+  margin-bottom: $space-4;
+}
+
+.twinCity {
+  @include text($text-xs, $weight-medium, $color-primary-dark);
+  background: $color-primary-light;
+  padding: 4px 10px;
+  border-radius: $radius-full;
+}
+
+.cityProgramList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.cityCard {
+  @include card;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.cityCardTop {
+  @include flex(center, space-between);
+}
+
+.categoryBadge {
+  @include text($text-xs, $weight-medium);
+  padding: 3px 8px;
+  border-radius: $radius-full;
+}
+
+.cityCardYear {
+  @include text($text-xs, $weight-regular, $color-text-muted);
+}
+
+.cityCardTitle {
+  @include text($text-sm, $weight-medium);
+}
+
+.cityCardDesc {
+  @include text($text-xs, $weight-regular, $color-text-secondary);
+  line-height: 1.5;
+}
+
+.cityCardDonor {
+  @include text($text-xs, $weight-medium, $color-primary-dark);
+  margin-top: $space-1;
+}
