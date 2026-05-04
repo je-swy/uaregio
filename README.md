@@ -60,5 +60,5 @@ npm run dev
 
 ## Деплой
 
-Проєкт задеплоєний на [Vercel](https://vercel.com/).
+Проєкт задеплоєний на [Vercel](https://uaregio.vercel.app/).
 
