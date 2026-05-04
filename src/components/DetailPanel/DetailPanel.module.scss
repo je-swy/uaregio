@@ -1,0 +1,99 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.panel {
+  margin: 0 $container-pad $space-10;
+  max-width: $container-max;
+  margin-left: auto;
+  margin-right: auto;
+  background: $color-bg-panel;
+  border: 0.5px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-6;
+}
+
+.header {
+  @include flex(center, flex-start, 14px);
+  margin-bottom: $space-5;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: $radius-lg;
+  background: $color-primary-light;
+  @include flex(center, center);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.title {
+  @include text($text-lg, $weight-medium);
+}
+
+.sub {
+  @include text($text-sm, $weight-regular, $color-text-secondary);
+  margin-top: 2px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: $space-5;
+}
+
+.stat {
+  background: $color-bg-card;
+  border: 0.5px solid $color-border;
+  border-radius: $radius-md;
+  padding: 14px;
+}
+
+.statLabel {
+  @include text($text-xs, $weight-regular, $color-text-secondary);
+  margin-bottom: $space-2;
+}
+
+.statValue {
+  @include text($text-xl, $weight-medium);
+}
+
+.statDelta {
+  @include text($text-xs, $weight-regular, $color-primary-dark);
+  margin-top: 2px;
+}
+
+.programsTitle {
+  @include text($text-base, $weight-medium);
+  margin-bottom: $space-3;
+}
+
+.programList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.programItem {
+  @include flex(center, flex-start, $space-2);
+  @include text($text-sm, $weight-regular, $color-text-secondary);
+}
+
+.programDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-primary;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    margin: 0 $space-4 $space-8;
+  }
+}
