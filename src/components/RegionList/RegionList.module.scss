@@ -1,0 +1,65 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  padding: $space-10 $container-pad;
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  @include flex(baseline, space-between);
+  margin-bottom: $space-1;
+}
+
+.sectionTitle {
+  @include text($text-lg, $weight-medium);
+}
+
+.sectionLink {
+  @include text($text-xs, $weight-regular, $color-primary);
+  cursor: pointer;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.sectionSub {
+  @include text($text-sm, $weight-regular, $color-text-secondary);
+  margin-bottom: $space-6;
+}
+
+.filterRow {
+  @include flex(center, flex-start, $space-2);
+  flex-wrap: wrap;
+  margin-bottom: $space-5;
+}
+
+.chip {
+  @include text($text-xs, $weight-regular, $color-text-secondary);
+  padding: 5px 12px;
+  border-radius: $radius-full;
+  border: 0.5px solid $color-border;
+  background: $color-bg-card;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $color-border-md;
+  }
+
+  &.active {
+    background: $color-primary-light;
+    color: $color-primary-dark;
+    border-color: $color-primary;
+    font-weight: $weight-medium;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
